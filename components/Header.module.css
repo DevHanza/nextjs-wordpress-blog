@@ -1,4 +1,4 @@
-.menuOverlay {
+.overlay {
   transform: translateX(-100%);
   transition: 0.3s ease;
 }

@@ -12,11 +12,14 @@ import {
 } from "@boxicons/react";
 
 import styles from "./Header.module.css";
+
 import { useState } from "react";
 import type { Dispatch, SetStateAction } from "react";
+import SearchBarOverlay from "./SearchBarOverlay";
 
 function Header({}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearching, setIsSearching] = useState(false);
 
   const pathname = usePathname();
 
@@ -34,7 +37,7 @@ function Header({}) {
           />
         </div>
 
-        <nav className="hidden flex-row gap-9 md:flex">
+        <nav className="hidden flex-row items-center gap-9 md:flex">
           <ul className="flex flex-row gap-8 text-sm text-gray-500 uppercase">
             <Link href={"/"} className="content-center">
               <li className={pathname === "/" ? "text-black" : ""}>Home</li>
@@ -51,14 +54,23 @@ function Header({}) {
             </Link>
           </ul>
 
-          <Link href={"/"} className="content-center">
-            <Search size="sm" />
-          </Link>
+          <Search
+            size="sm"
+            className="cursor-pointer"
+            onClick={() => {
+              setIsSearching(true);
+            }}
+          />
         </nav>
       </div>
+      <SearchBarOverlay
+        isSearching={isSearching}
+        setIsSearching={setIsSearching}
+      />
       <MobileHeaderOverlay
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
+        setIsSearching={setIsSearching}
       />
     </header>
   );
@@ -67,12 +79,17 @@ function Header({}) {
 type OverlayProps = {
   isMenuOpen: boolean;
   setIsMenuOpen: Dispatch<SetStateAction<boolean>>;
+  setIsSearching: Dispatch<SetStateAction<boolean>>;
 };
 
-function MobileHeaderOverlay({ isMenuOpen, setIsMenuOpen }: OverlayProps) {
+function MobileHeaderOverlay({
+  isMenuOpen,
+  setIsMenuOpen,
+  setIsSearching,
+}: OverlayProps) {
   return (
     <div
-      className={` ${styles.menuOverlay} ${isMenuOpen ? styles.open : ""} absolute inset-0 z-99 flex h-dvh flex-col items-center justify-between bg-white px-5 py-6`}
+      className={` ${styles.overlay} ${isMenuOpen ? styles.open : ""} absolute inset-0 z-99 flex h-dvh flex-col items-center justify-between bg-white px-5 py-6`}
     >
       <div className="w-full">
         {/* <aside
@@ -97,7 +114,13 @@ function MobileHeaderOverlay({ isMenuOpen, setIsMenuOpen }: OverlayProps) {
             <li>Contact</li>
           </Link>
         </ul>
-        <Search className="cursor-pointer" />
+        <Search
+          className="cursor-pointer"
+          size="sm"
+          onClick={() => {
+            setIsSearching(true);
+          }}
+        />
       </nav>
 
       <div className="flex gap-3 text-gray-500">
