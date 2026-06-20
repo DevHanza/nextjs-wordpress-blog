@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import {
   Menu,
@@ -14,8 +15,10 @@ import styles from "./Header.module.css";
 import { useState } from "react";
 import type { Dispatch, SetStateAction } from "react";
 
-function Header() {
+function Header({ }) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const pathname = usePathname();
 
   return (
     <header className="border-b border-gray-300">
@@ -34,13 +37,17 @@ function Header() {
         <nav className="hidden flex-row gap-9 md:flex">
           <ul className="flex flex-row gap-8 text-sm text-gray-500 uppercase">
             <Link href={"/"} className="content-center">
-              <li className="text-black">Home</li>
+              <li className={pathname === "/" ? "text-black" : ""}>Home</li>
             </Link>
             <Link href={"/about"} className="content-center">
-              <li>About</li>
+              <li className={pathname === "/about" ? "text-black" : ""}>
+                About
+              </li>
             </Link>
             <Link href={"/contact"} className="content-center">
-              <li>Contact</li>
+              <li className={pathname === "/contact" ? "text-black" : ""}>
+                Contact
+              </li>
             </Link>
           </ul>
 
@@ -49,7 +56,7 @@ function Header() {
           </Link>
         </nav>
       </div>
-      <MobileMenuOverlay isOpen={isOpen} setIsOpen={setIsOpen} />
+      <MobileHeaderOverlay isOpen={isOpen} setIsOpen={setIsOpen} />
     </header>
   );
 }
@@ -59,7 +66,7 @@ type OverlayProps = {
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 };
 
-function MobileMenuOverlay({ isOpen, setIsOpen }: OverlayProps) {
+function MobileHeaderOverlay({ isOpen, setIsOpen }: OverlayProps) {
   return (
     <div
       className={` ${styles.menuOverlay} ${isOpen ? styles.open : ""} absolute inset-0 z-99 flex h-dvh flex-col items-center justify-between bg-white px-5 py-6`}
