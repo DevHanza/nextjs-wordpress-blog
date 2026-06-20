@@ -1,0 +1,114 @@
+"use client";
+
+import Link from "next/link";
+import {
+  Menu,
+  Search,
+  X,
+  Facebook,
+  TwitterX,
+  Instagram,
+} from "@boxicons/react";
+
+import styles from "./Header.module.css";
+import { useState } from "react";
+import type { Dispatch, SetStateAction } from "react";
+
+function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <header className="border-b border-gray-300">
+      <div className="container flex flex-col justify-between py-6 md:flex-row md:py-8">
+        <div className="flex flex-row justify-between">
+          <Link href={"/"}>
+            <span className="text-xl font-semibold md:text-2xl">BLOG</span>
+          </Link>
+
+          <Menu
+            className="cursor-pointer md:hidden"
+            onClick={() => setIsOpen(true)}
+          />
+        </div>
+
+        <nav className="hidden flex-row gap-9 md:flex">
+          <ul className="flex flex-row gap-8 text-sm text-gray-500 uppercase">
+            <Link href={"/"} className="content-center">
+              <li className="text-black">Home</li>
+            </Link>
+            <Link href={"/about"} className="content-center">
+              <li>About</li>
+            </Link>
+            <Link href={"/contact"} className="content-center">
+              <li>Contact</li>
+            </Link>
+          </ul>
+
+          <Link href={"/"} className="content-center">
+            <Search size="sm" />
+          </Link>
+        </nav>
+      </div>
+      <MobileMenuOverlay isOpen={isOpen} setIsOpen={setIsOpen} />
+    </header>
+  );
+}
+
+type OverlayProps = {
+  isOpen: boolean;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
+};
+
+function MobileMenuOverlay({ isOpen, setIsOpen }: OverlayProps) {
+  return (
+    <div
+      className={` ${styles.menuOverlay} ${isOpen ? styles.open : ""} absolute inset-0 z-99 flex h-dvh flex-col items-center justify-between bg-white px-5 py-6`}
+    >
+      <div className="w-full">
+        {/* <aside
+          className={`${styles.sideMenu} ${open ? styles.open : ""}`}
+        ></aside> */}
+        <label htmlFor="navToggle">
+          <X
+            className="ml-auto cursor-pointer"
+            onClick={() => setIsOpen(false)}
+          />
+        </label>
+      </div>
+      <nav className="flex flex-col items-center gap-9">
+        <ul className="flex flex-col gap-9 text-center text-lg text-gray-500 uppercase">
+          <Link href={"/"}>
+            <li className="text-black">Home</li>
+          </Link>
+          <Link href={"/"}>
+            <li>About</li>
+          </Link>
+          <Link href={"/"}>
+            <li>Contact</li>
+          </Link>
+        </ul>
+        <Search className="cursor-pointer" />
+      </nav>
+
+      <div className="flex gap-3 text-gray-500">
+        <Link href={"#"}>
+          <span className="gray-500 flex h-9 w-9 items-center justify-center rounded-full border border-gray-400">
+            <Facebook size="sm" />
+          </span>
+        </Link>
+        <Link href={"#"}>
+          <span className="gray-500 flex h-9 w-9 items-center justify-center rounded-full border border-gray-400">
+            <TwitterX size="sm" />
+          </span>
+        </Link>
+        <Link href={"#"}>
+          <span className="gray-500 flex h-9 w-9 items-center justify-center rounded-full border border-gray-400">
+            <Instagram size="sm" />
+          </span>
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+export default Header;

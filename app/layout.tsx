@@ -29,7 +29,8 @@ export default function RootLayout({
       lang="en"
       className={`${sora.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body suppressHydrationWarning className="min-h-full flex flex-col">
+      <body suppressHydrationWarning className="flex min-h-full flex-col">
+        <Header />
         <main>{children}</main>
       </body>
     </html>
