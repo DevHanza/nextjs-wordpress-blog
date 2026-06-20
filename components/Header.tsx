@@ -15,8 +15,8 @@ import styles from "./Header.module.css";
 import { useState } from "react";
 import type { Dispatch, SetStateAction } from "react";
 
-function Header({ }) {
-  const [isOpen, setIsOpen] = useState(false);
+function Header({}) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const pathname = usePathname();
 
@@ -30,7 +30,7 @@ function Header({ }) {
 
           <Menu
             className="cursor-pointer md:hidden"
-            onClick={() => setIsOpen(true)}
+            onClick={() => setIsMenuOpen(true)}
           />
         </div>
 
@@ -56,20 +56,23 @@ function Header({ }) {
           </Link>
         </nav>
       </div>
-      <MobileHeaderOverlay isOpen={isOpen} setIsOpen={setIsOpen} />
+      <MobileHeaderOverlay
+        isMenuOpen={isMenuOpen}
+        setIsMenuOpen={setIsMenuOpen}
+      />
     </header>
   );
 }
 
 type OverlayProps = {
-  isOpen: boolean;
-  setIsOpen: Dispatch<SetStateAction<boolean>>;
+  isMenuOpen: boolean;
+  setIsMenuOpen: Dispatch<SetStateAction<boolean>>;
 };
 
-function MobileHeaderOverlay({ isOpen, setIsOpen }: OverlayProps) {
+function MobileHeaderOverlay({ isMenuOpen, setIsMenuOpen }: OverlayProps) {
   return (
     <div
-      className={` ${styles.menuOverlay} ${isOpen ? styles.open : ""} absolute inset-0 z-99 flex h-dvh flex-col items-center justify-between bg-white px-5 py-6`}
+      className={` ${styles.menuOverlay} ${isMenuOpen ? styles.open : ""} absolute inset-0 z-99 flex h-dvh flex-col items-center justify-between bg-white px-5 py-6`}
     >
       <div className="w-full">
         {/* <aside
@@ -78,7 +81,7 @@ function MobileHeaderOverlay({ isOpen, setIsOpen }: OverlayProps) {
         <label htmlFor="navToggle">
           <X
             className="ml-auto cursor-pointer"
-            onClick={() => setIsOpen(false)}
+            onClick={() => setIsMenuOpen(false)}
           />
         </label>
       </div>
