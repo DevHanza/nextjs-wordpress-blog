@@ -3,6 +3,7 @@ import { Sora, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const sora = Sora({
   variable: "--font-sora",
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body suppressHydrationWarning className="flex min-h-full flex-col">
         <Header />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
