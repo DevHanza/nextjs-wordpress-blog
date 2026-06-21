@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 
-function CardAuthor() {
+function Author() {
   return (
     <div className="flex items-center gap-3">
       <Image
@@ -11,9 +11,9 @@ function CardAuthor() {
         height={28}
         alt=""
       />
-      <span className="text-sm">Mary Anthony</span>
+      <span className="line-clamp-1 text-sm">Mary Anthony</span>
     </div>
   );
 }
 
-export default CardAuthor;
+export default Author;
