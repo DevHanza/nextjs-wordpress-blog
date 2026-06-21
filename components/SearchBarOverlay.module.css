@@ -1,0 +1,10 @@
+.overlay {
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.15s ease;
+}
+
+.open {
+  opacity: 100%;
+  pointer-events: auto;
+}
