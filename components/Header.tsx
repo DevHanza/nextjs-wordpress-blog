@@ -24,7 +24,7 @@ function Header({}) {
   const pathname = usePathname();
 
   return (
-    <header className="border-b border-gray-300">
+    <header>
       <div className="container flex flex-col justify-between py-6 md:flex-row md:py-8">
         <div className="flex flex-row justify-between">
           <Link href={"/"}>
