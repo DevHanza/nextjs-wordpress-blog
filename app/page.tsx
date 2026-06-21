@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       {/*  1  */}
-      <section className="mt-5 mb-11 md:mt-12 md:mb-25">
+      <section className="section mt-5 md:mt-12">
         <div className="container flex flex-col-reverse items-center gap-6 sm:flex-row md:gap-12 lg:gap-22">
           <div className="flex flex-1 flex-col">
             <Author />
@@ -47,7 +47,7 @@ export default function Home() {
       {/*  1 # */}
 
       {/*  2  */}
-      <section className="">
+      <section className="section">
         <div className="container">
           <div className="gap grid gap-x-12 gap-y-8 md:grid-cols-2 lg:gap-x-16">
             <BlogCardMini />
