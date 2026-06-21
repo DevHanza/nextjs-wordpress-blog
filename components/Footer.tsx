@@ -6,7 +6,7 @@ import { Facebook, TwitterX, Instagram } from "@boxicons/react";
 
 function Footer() {
   return (
-    <footer className="mt-25">
+    <footer className="mt-12.5 md:mt-25">
       <div className="flex h-75 flex-row">
         <div className="relative h-75 grow basis-1">
           <Image
