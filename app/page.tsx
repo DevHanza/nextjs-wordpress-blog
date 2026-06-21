@@ -1,5 +1,6 @@
 "use client";
 
+import BlogCardMini from "@/components/BlogCardMini";
 import Author from "@/components/Author";
 import Image from "next/image";
 import Link from "next/link";
@@ -44,6 +45,19 @@ export default function Home() {
         </div>
       </section>
       {/*  1 # */}
+
+      {/*  2  */}
+      <section className="">
+        <div className="container">
+          <div className="gap grid gap-x-12 gap-y-8 md:grid-cols-2 lg:gap-x-16">
+            <BlogCardMini />
+            <BlogCardMini />
+            <BlogCardMini />
+            <BlogCardMini />
+          </div>
+        </div>
+      </section>
+      {/*  2 #  */}
     </>
   );
 }
