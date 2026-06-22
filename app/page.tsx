@@ -1,9 +1,11 @@
 "use client";
 
-import BlogCardMini from "@/components/BlogCardMini";
-import Author from "@/components/Author";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+
+import Author from "@/components/Author";
+import BlogCardMini from "@/components/BlogCardMini";
+import BlogCardVertical from "@/components/BlogCardVertical";
 
 export default function Home() {
   return (
@@ -60,9 +62,18 @@ export default function Home() {
       {/*  2 #  */}
 
       {/*  3  */}
-      <section className="section">
+      <section className="section border-t border-t-gray-200 py-0! pt-12 md:border-0 md:pt-0">
         <div className="container">
-          <h2 className="text-xl font-semibold md:text-2xl">Latest Posts</h2>
+          <h2 className="mb-8 text-xl font-semibold md:mb-11 md:text-2xl">
+            Latest Posts
+          </h2>
+
+          <div className="flex flex-col gap-4 md:gap-6">
+            <BlogCardVertical />
+            <BlogCardVertical />
+            <BlogCardVertical />
+            <BlogCardVertical />
+          </div>
         </div>
       </section>
       {/*  3 #  */}
