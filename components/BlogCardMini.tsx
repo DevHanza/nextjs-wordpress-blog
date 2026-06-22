@@ -6,22 +6,28 @@ import Link from "next/link";
 
 function BlogCardMini() {
   return (
-    <div className="flex flex-row items-center gap-6">
-      <div className="flex grow basis-0 flex-col gap-6">
+    <div className="flex flex-col-reverse items-center gap-6 lg:flex-row">
+      <div className="flex w-full grow flex-col gap-6">
         <Author />
-        <h2 className="line-clamp-3 overflow-hidden text-xl">
-          Underrated Tools for Creators, But Your Mindset Is Powerful..
-        </h2>
+        <Link href={"#"} className="flex flex-col gap-2 md:gap-3">
+          <h3 className="line-clamp-3 overflow-hidden text-2xl md:text-xl">
+            Underrated Tools for Creators, But Your Mindset Is Powerful..
+          </h3>
+          <p className="md:text-md line-clamp-2 overflow-hidden text-base leading-7 text-gray-500 lg:hidden">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy.
+          </p>
+        </Link>
         <span className="text-sm text-gray-500">
           2 min read {"\u00A0"} - {"\u00A0"} Oct 19, 2020
         </span>
       </div>
-      <div className="basis-40 lg:basis-50">
+      <div className="w-full shrink-0 lg:w-auto">
         <Link href={"/"}>
           <Image
-            className="h-50 w-50 rounded-lg object-cover md:w-40 lg:w-50"
+            className="h-75 w-full rounded-lg object-cover md:h-50 lg:w-50"
             src={"/thumbnail.jpg"}
-            width={300}
+            width={400}
             height={300}
             alt=""
           />

@@ -17,10 +17,10 @@ export default function Home() {
               href={"/"}
               className={"my-6 flex flex-col gap-2 md:mt-8 md:mb-11 md:gap-3"}
             >
-              <h2 className="line-clamp-3 overflow-hidden text-2xl leading-snug sm:text-3xl lg:text-4xl">
+              <h3 className="line-clamp-3 overflow-hidden text-2xl leading-snug tracking-tight sm:text-3xl lg:text-4xl">
                 Underrated Tools for Creators, But Your Mindset Is Powerful Than
                 You Think
-              </h2>
+              </h3>
               <p className="line-clamp-2 overflow-hidden text-base leading-7 text-gray-500 md:text-lg">
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 diam nonumy.
@@ -49,7 +49,7 @@ export default function Home() {
       {/*  2  */}
       <section className="section">
         <div className="container">
-          <div className="gap grid gap-x-12 gap-y-8 md:grid-cols-2 lg:gap-x-16">
+          <div className="gap grid gap-y-12 gap-x-4 md:grid-cols-2 lg:gap-x-16">
             <BlogCardMini />
             <BlogCardMini />
             <BlogCardMini />
@@ -58,6 +58,14 @@ export default function Home() {
         </div>
       </section>
       {/*  2 #  */}
+
+      {/*  3  */}
+      <section className="section">
+        <div className="container">
+          <h2 className="text-xl font-semibold md:text-2xl">Latest Posts</h2>
+        </div>
+      </section>
+      {/*  3 #  */}
     </>
   );
 }
