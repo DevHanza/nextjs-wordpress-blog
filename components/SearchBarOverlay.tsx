@@ -12,7 +12,7 @@ function SearchBarOverlay({ isSearching, setIsSearching }: OverlayProps) {
     <div
       className={`${styles.overlay} ${isSearching ? styles.open : ""} absolute inset-0 z-100 flex h-dvh flex-col items-center bg-white py-6 md:py-8`}
     >
-      <div className="container">
+      <div className="g-container">
         <div className="w-full">
           <X
             className="ml-auto cursor-pointer text-gray-500"

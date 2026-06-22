@@ -25,15 +25,16 @@ body {
   font-family: "Sora", sans-serif;
 }
 
-.container {
-  max-width: 1140px;
-  padding-inline: 1.25em;
-  margin: 0 auto;
-}
-
-/* Headings */
+/* Container */
 
 @layer base {
+  .g-container {
+    max-width: 1140px;
+    padding-inline: 1.25em;
+    margin: 0 auto;
+  }
+  /* Headings */
+
   h1,
   h2,
   h3 {
@@ -116,6 +117,14 @@ body {
       font-size: 1.25rem;
     }
   }
+
+  p {
+    font-size: 1rem;
+    color: var(--color-gray-500);
+    font-weight: 400;
+  }
+
+  /* Section */
 
   .section {
     padding-bottom: 3.125em;

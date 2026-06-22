@@ -13,7 +13,7 @@ export default function Home() {
     <>
       {/*  1  */}
       <section className="section mt-5 md:mt-12">
-        <div className="container flex flex-col-reverse items-center gap-6 md:flex-row md:gap-12 lg:gap-22">
+        <div className="g-container flex flex-col-reverse items-center gap-6 md:flex-row md:gap-12 lg:gap-22">
           <div className="flex flex-1 flex-col">
             <Author />
             <Link
@@ -51,7 +51,7 @@ export default function Home() {
 
       {/*  2  */}
       <section className="section">
-        <div className="container">
+        <div className="g-container">
           <div className="gap grid gap-x-4 gap-y-12 md:grid-cols-2 lg:gap-x-16">
             <BlogCardMini />
             <BlogCardMini />
@@ -64,7 +64,7 @@ export default function Home() {
 
       {/*  3  */}
       <section className="section border-t border-t-gray-200 pb-0! pt-12 md:border-0 md:pt-0">
-        <div className="container">
+        <div className="g-container">
           <h2 className="mb-8 text-xl font-semibold md:mb-11 md:text-2xl">
             Latest Posts
           </h2>

@@ -25,7 +25,7 @@ function Header({}) {
 
   return (
     <header>
-      <div className="container flex flex-col justify-between py-6 md:flex-row md:py-8">
+      <div className="g-container flex flex-col justify-between py-6 md:flex-row md:py-8">
         <div className="flex flex-row justify-between">
           <Link href={"/"}>
             <span className="text-xl font-semibold md:text-2xl">BLOG</span>
