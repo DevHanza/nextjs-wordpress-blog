@@ -116,14 +116,14 @@ body {
       font-size: 1.25rem;
     }
   }
-}
 
-.section {
-  margin-bottom: 3.125em;
-}
-
-@media (width >= 48rem) {
   .section {
-    margin-bottom: 6.25em;
+    padding-bottom: 3.125em;
+  }
+
+  @media (width >= 48rem) {
+    .section {
+      padding-bottom: 6.25em;
+    }
   }
 }
