@@ -61,7 +61,7 @@ function Footer() {
       </div>
       <div className="g-container py-12.5 md:py-25">
         <Link href={"/"}>
-          <p className="text-black mb-8 text-center text-xl font-semibold md:text-2xl">
+          <p className="mb-8 text-center text-xl font-semibold text-black md:text-2xl">
             BLOG
           </p>
         </Link>

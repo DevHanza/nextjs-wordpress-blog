@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Author from "@/components/Author";
+import Author from "@/components/blog/Author";
 
 function SinglePostPage() {
   return (
@@ -46,7 +46,6 @@ function SinglePostPage() {
 
       <section className="">
         <div className="g-container max-w-3xl">
-      
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
             ultricies sapien id eros ultrices egestas. Cras et placerat mi,

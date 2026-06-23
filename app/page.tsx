@@ -3,9 +3,9 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import Author from "@/components/Author";
-import BlogCardMini from "@/components/BlogCardMini";
-import BlogCardVertical from "@/components/BlogCardVertical";
+import Author from "@/components/blog/Author";
+import BlogCardMini from "@/components/blog/BlogCardMini";
+import BlogCardVertical from "@/components/blog/BlogCardVertical";
 import Pagination from "@/components/ui/Pagination";
 
 export default function Home() {
@@ -63,7 +63,7 @@ export default function Home() {
       {/*  2 #  */}
 
       {/*  3  */}
-      <section className="section border-t border-t-gray-200 pb-0! pt-12 md:border-0 md:pt-0">
+      <section className="section border-t border-t-gray-200 pt-12 pb-0! md:border-0 md:pt-0">
         <div className="g-container">
           <h2 className="mb-8 text-xl font-semibold md:mb-11 md:text-2xl">
             Latest Posts
@@ -76,7 +76,7 @@ export default function Home() {
             <BlogCardVertical />
           </div>
 
-          <div className="flex justify-center md:mt-22 mt-8">
+          <div className="mt-8 flex justify-center md:mt-22">
             <Pagination />
           </div>
         </div>

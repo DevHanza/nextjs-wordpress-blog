@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import Author from "@/components/Author";
+import Author from "@/components/blog/Author";
 
 function BlogCardVertical() {
   return (

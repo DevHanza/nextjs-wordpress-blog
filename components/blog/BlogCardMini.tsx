@@ -1,6 +1,6 @@
 "use client";
 
-import Author from "@/components/Author";
+import Author from "@/components/blog/Author";
 import Image from "next/image";
 import Link from "next/link";
 
