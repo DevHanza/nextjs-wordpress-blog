@@ -6,6 +6,6 @@ export async function getPosts(): Promise<Post[]> {
   // _fields=id,slug,title,excerpt
 }
 
-export async function getPostBySlug(slug: string) {
+export async function getPostBySlug(slug: string): Promise<Post> {
   return fetchAPI(`wp/v2/posts?slug=${slug}&_embed`);
 }
