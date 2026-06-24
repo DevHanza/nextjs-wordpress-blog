@@ -1,6 +1,7 @@
 import HeroBlogCard from "@/components/HeroBlogCard";
 import BlogCardMini from "@/components/blog/BlogCardMini";
 import BlogCardVertical from "@/components/blog/BlogCardVertical";
+import EmptyState from "@/components/ui/EmptyState";
 import Pagination from "@/components/ui/Pagination";
 
 import { getPosts } from "@/lib/wordpress/posts";
@@ -9,6 +10,7 @@ export default async function Home() {
   const posts = await getPosts();
   // console.log(posts[0]);
 
+  if (!posts) return <EmptyState />;
 
   return (
     <>
