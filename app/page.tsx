@@ -24,7 +24,7 @@ export default async function Home() {
       <section className="section">
         <div className="g-container">
           <div className="gap grid gap-x-4 gap-y-12 md:grid-cols-2 lg:gap-x-16">
-            {posts.slice(1,5).map((post) => {
+            {posts.slice(1, 5).map((post) => {
               return <BlogCardMini post={post} key={post.id} />;
             })}
           </div>
@@ -40,10 +40,9 @@ export default async function Home() {
           </h2>
 
           <div className="flex flex-col gap-4 md:gap-6">
-            <BlogCardVertical />
-            <BlogCardVertical />
-            <BlogCardVertical />
-            <BlogCardVertical />
+            {posts.slice(5,9).map((post) => {
+              return <BlogCardVertical post={post} key={post.id} />;
+            })}
           </div>
 
           <div className="mt-8 flex justify-center md:mt-22">
