@@ -1,0 +1,85 @@
+.content {
+  /* styles */
+
+  strong {
+    color: #171717;
+    font-weight: 600;
+  }
+
+  table {
+    /* border: 1px solid #ccc; */
+    width: 100%;
+
+    tr {
+      border-bottom: 1px solid #ccc;
+    }
+
+    td {
+      border-inline: 1px solid #ccc;
+    }
+
+    thead {
+      border-block: 1px solid #ccc;
+
+      th {
+        text-align: left;
+        padding: 0.5em 1em;
+        border-inline: 1px solid #ccc;
+      }
+
+      tr {
+        background: #f3f3f3;
+        border-bottom: 1px solid #ccc;
+      }
+    }
+
+    tbody td {
+      padding: 0.5em 1em;
+    }
+  }
+
+  /* Spacing */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 1.6em;
+    margin-bottom: 0.6em;
+  }
+
+  p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    em {
+      margin-inline: 1px;
+    }
+  }
+
+  ul,
+  ol {
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+  }
+
+  li {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  blockquote,
+  figure,
+  pre,
+  table {
+    margin-top: 1.6em;
+    margin-bottom: 1.6em;
+  }
+
+  hr {
+    margin-top: 3em;
+    margin-bottom: 3em;
+    color: #e5e5e5;
+  }
+}

@@ -5,6 +5,8 @@ import { getPostBySlug } from "@/lib/wordpress/posts";
 import { notFound } from "next/navigation";
 import { Post } from "@/types/post";
 
+import styles from "./page.module.css";
+
 interface Props {
   params: Promise<{ slug: string }>;
 }
@@ -82,7 +84,7 @@ async function SinglePostPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="">
+      <section className={styles.content}>
         <div
           className="g-container max-w-3xl"
           dangerouslySetInnerHTML={{
