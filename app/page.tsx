@@ -24,10 +24,9 @@ export default async function Home() {
       <section className="section">
         <div className="g-container">
           <div className="gap grid gap-x-4 gap-y-12 md:grid-cols-2 lg:gap-x-16">
-            <BlogCardMini />
-            <BlogCardMini />
-            <BlogCardMini />
-            <BlogCardMini />
+            {posts.slice(1,5).map((post) => {
+              return <BlogCardMini post={post} key={post.id} />;
+            })}
           </div>
         </div>
       </section>
