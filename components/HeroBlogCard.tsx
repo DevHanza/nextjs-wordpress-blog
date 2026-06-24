@@ -31,9 +31,12 @@ export default function HeroBlogCard({ post }: Props) {
           href={`/p/${post.slug}`}
           className={"my-6 flex flex-col gap-2 md:mt-8 md:mb-11 md:gap-3"}
         >
-          <h3 className="line-clamp-3 overflow-hidden text-2xl leading-snug tracking-tight md:text-3xl lg:text-4xl">
-            {post.title.rendered}
-          </h3>
+          <h3
+            dangerouslySetInnerHTML={{
+              __html: post.title.rendered,
+            }}
+            className="line-clamp-3 overflow-hidden text-2xl leading-snug tracking-tight md:text-3xl lg:text-4xl"
+          ></h3>
           <div
             className="line-clamp-2 overflow-hidden text-base leading-7 text-gray-500 md:text-lg"
             dangerouslySetInnerHTML={{
