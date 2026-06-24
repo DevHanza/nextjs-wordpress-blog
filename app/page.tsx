@@ -3,11 +3,18 @@ import BlogCardMini from "@/components/blog/BlogCardMini";
 import BlogCardVertical from "@/components/blog/BlogCardVertical";
 import Pagination from "@/components/ui/Pagination";
 
+import { getPosts } from "@/lib/wordpress/posts";
+
+export default async function Home() {
+  const posts = await getPosts();
+  // console.log(posts[0]);
+
+
   return (
     <>
       {/*  1  */}
       <section className="section mt-5 md:mt-12">
-        <HeroBlogCard />
+        <HeroBlogCard post={posts[0]} />
       </section>
       {/*  1 # */}
 
