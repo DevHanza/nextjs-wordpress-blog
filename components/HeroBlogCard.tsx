@@ -9,9 +9,8 @@ interface Props {
 }
 
 export default function HeroBlogCard({ post }: Props) {
-  // console.log(post?._embedded["wp:featuredmedia"][0].source_url);
-
-  const thumbnail = post?._embedded["wp:featuredmedia"][0].source_url;
+  const thumb = post?._embedded["wp:featuredmedia"][0].source_url;
+  const thumb_alt = post?._embedded["wp:featuredmedia"][0].alt_text;
 
   const author = {
     name: post?._embedded.author[0].name,
@@ -52,10 +51,10 @@ export default function HeroBlogCard({ post }: Props) {
           <Image
             className="h-75 w-full rounded-lg object-cover md:h-100"
             // src={"/thumbnail.jpg"}
-            src={thumbnail}
+            src={thumb}
             width={600}
             height={400}
-            alt={post.title.rendered}
+            alt={thumb_alt}
             loading="eager"
           />
         </Link>
