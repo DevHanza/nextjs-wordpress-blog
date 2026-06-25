@@ -1,21 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import {
-  Menu,
-  Search,
-  X,
-  Facebook,
-  TwitterX,
-  Instagram,
-} from "@boxicons/react";
+import { Menu, Search } from "@boxicons/react";
 
-import styles from "./Header.module.css";
-
-import { useState } from "react";
-import type { Dispatch, SetStateAction } from "react";
 import SearchBarOverlay from "./SearchBarOverlay";
+import MobileHeaderOverlay from "./MobileHeaderOverlay";
 
 function Header({}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -63,84 +54,16 @@ function Header({}) {
           />
         </nav>
       </div>
-      <SearchBarOverlay
-        isSearching={isSearching}
-        setIsSearching={setIsSearching}
-      />
       <MobileHeaderOverlay
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
         setIsSearching={setIsSearching}
       />
+      <SearchBarOverlay
+        isSearching={isSearching}
+        setIsSearching={setIsSearching}
+      />
     </header>
-  );
-}
-
-type OverlayProps = {
-  isMenuOpen: boolean;
-  setIsMenuOpen: Dispatch<SetStateAction<boolean>>;
-  setIsSearching: Dispatch<SetStateAction<boolean>>;
-};
-
-function MobileHeaderOverlay({
-  isMenuOpen,
-  setIsMenuOpen,
-  setIsSearching,
-}: OverlayProps) {
-  return (
-    <div
-      className={` ${styles.overlay} ${isMenuOpen ? styles.open : ""} absolute inset-0 z-99 flex h-dvh flex-col items-center justify-between overflow-hidden overscroll-contain bg-white px-5 py-6`}
-    >
-      <div className="w-full">
-        {/* <aside
-          className={`${styles.sideMenu} ${open ? styles.open : ""}`}
-        ></aside> */}
-        <label htmlFor="navToggle">
-          <X
-            className="ml-auto cursor-pointer"
-            onClick={() => setIsMenuOpen(false)}
-          />
-        </label>
-      </div>
-      <nav className="flex flex-col items-center gap-9">
-        <ul className="flex flex-col gap-9 text-center text-lg text-gray-500 uppercase">
-          <Link href={"/"}>
-            <li className="text-black">Home</li>
-          </Link>
-          <Link href={"/"}>
-            <li>About</li>
-          </Link>
-          <Link href={"/"}>
-            <li>Contact</li>
-          </Link>
-        </ul>
-        <Search
-          className="cursor-pointer"
-          size="sm"
-          onClick={() => {
-            setIsSearching(true);
-          }}
-        />
-      </nav>
-
-      <div className="flex gap-3 text-gray-500">
-        <Link href={"#"}>
-          <span className="gray-500 flex h-9 w-9 items-center justify-center rounded-full border border-gray-400">
-            <Facebook size="sm" />
-          </span>
-        </Link>
-        <Link href={"#"}>
-          <span className="gray-500 flex h-9 w-9 items-center justify-center rounded-full border border-gray-400">
-            <TwitterX size="sm" />
-          </span>
-        </Link>
-        <Link href={"#"}>
-          <span className="gray-500 flex h-9 w-9 items-center justify-center rounded-full border border-gray-400">
-            <Instagram size="sm" />
-          </span>
-        </Link>
-      </div>
-    </div>
   );
 }
 
