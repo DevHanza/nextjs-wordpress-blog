@@ -15,11 +15,11 @@ async function SinglePostPage({ params }: Props) {
   const { slug } = await params;
 
   let post: Post = await getPostBySlug(slug);
+
+  // console.log(post);
+  if (!post) return notFound();
+  
   post = post[0];
-
-  console.log(post);
-
-  if (!post) notFound();
 
   //
   const thumb = post?._embedded["wp:featuredmedia"][0].source_url;
