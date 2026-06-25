@@ -1,8 +1,7 @@
+import EmptyState from "@/components/ui/EmptyState";
 import HeroBlogCard from "@/components/HeroBlogCard";
 import BlogCardMini from "@/components/blog/BlogCardMini";
-import BlogCardVertical from "@/components/blog/BlogCardVertical";
-import EmptyState from "@/components/ui/EmptyState";
-import Pagination from "@/components/ui/Pagination";
+import PostsList from "@/components/PostsList";
 
 import { getPosts } from "@/lib/wordpress/posts";
 
@@ -39,16 +38,7 @@ export default async function Home() {
           <h2 className="mb-8 text-xl font-semibold md:mb-11 md:text-2xl">
             Latest Posts
           </h2>
-
-          <div className="flex flex-col gap-4 md:gap-6">
-            {posts.slice(5,9).map((post) => {
-              return <BlogCardVertical post={post} key={post.id} />;
-            })}
-          </div>
-
-          <div className="mt-8 flex justify-center md:mt-22">
-            <Pagination />
-          </div>
+          <PostsList />
         </div>
       </section>
       {/*  3 #  */}
