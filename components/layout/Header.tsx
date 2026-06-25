@@ -89,7 +89,7 @@ function MobileHeaderOverlay({
 }: OverlayProps) {
   return (
     <div
-      className={` ${styles.overlay} ${isMenuOpen ? styles.open : ""} absolute inset-0 z-99 flex h-dvh flex-col items-center justify-between bg-white px-5 py-6`}
+      className={` ${styles.overlay} ${isMenuOpen ? styles.open : ""} absolute inset-0 z-99 flex h-dvh flex-col items-center justify-between overflow-hidden overscroll-contain bg-white px-5 py-6`}
     >
       <div className="w-full">
         {/* <aside

@@ -10,7 +10,7 @@ type OverlayProps = {
 function SearchBarOverlay({ isSearching, setIsSearching }: OverlayProps) {
   return (
     <div
-      className={`${styles.overlay} ${isSearching ? styles.open : ""} absolute inset-0 z-100 flex h-dvh flex-col items-center bg-white py-6 md:py-8`}
+      className={`${styles.overlay} ${isSearching ? styles.open : ""} absolute inset-0 z-100 flex h-dvh flex-col items-center overflow-hidden overscroll-contain bg-white py-6 md:py-8`}
     >
       <div className="g-container">
         <div className="w-full">
