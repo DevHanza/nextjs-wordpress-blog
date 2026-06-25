@@ -79,26 +79,26 @@ function Footer() {
         </ul>
 
         <div className="flex justify-center gap-3 text-gray-500">
-          <Link href={"#"}>
+          <a href={"https://facebook.com"}>
             <span className="gray-500 flex h-9 w-9 items-center justify-center rounded-full border border-gray-400">
               <Facebook size="sm" />
             </span>
-          </Link>
-          <Link href={"#"}>
+          </a>
+          <a href={"https://x.com"}>
             <span className="gray-500 flex h-9 w-9 items-center justify-center rounded-full border border-gray-400">
               <TwitterX size="sm" />
             </span>
-          </Link>
-          <Link href={"#"}>
+          </a>
+          <a href={"https://instagram.com"}>
             <span className="gray-500 flex h-9 w-9 items-center justify-center rounded-full border border-gray-400">
               <Instagram size="sm" />
             </span>
-          </Link>
+          </a>
         </div>
       </div>
       <div className="border-t border-t-gray-300 px-5 py-6 text-center text-sm text-gray-500">
         © Copyright 2026 - All Rights Reserved by{" "}
-        <Link href={"https://github.com/DevHanza"}>DevHanza.</Link>
+        <a href={"https://github.com/DevHanza"}>DevHanza.</a>
       </div>
     </footer>
   );
