@@ -5,7 +5,7 @@ import { getPostBySlug } from "@/lib/wordpress/posts";
 import { notFound } from "next/navigation";
 import { Post } from "@/types/post";
 
-import styles from "./page.module.css";
+import styles from "./single-post.module.css";
 
 interface Props {
   params: Promise<{ slug: string }>;
