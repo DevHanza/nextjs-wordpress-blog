@@ -7,7 +7,8 @@ import Pagination from "@/components/ui/Pagination";
 import { getPosts } from "@/lib/wordpress/posts";
 
 export default async function Home() {
-  const posts = await getPosts();
+  //
+  const { posts } = await getPosts(1);
   // console.log(posts[0]);
 
   if (!posts) return <EmptyState />;

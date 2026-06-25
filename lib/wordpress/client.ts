@@ -12,7 +12,7 @@ export async function fetchAPI(endpoint: string) {
       throw new Error("Failed to fetch.");
     }
 
-    return res.json();
+    return res;
   } catch (error) {
     console.error("fetchAPI failed:", error);
     return null;
