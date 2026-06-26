@@ -1,22 +1,34 @@
 "use client";
 
 import { JSX } from "react/jsx-runtime";
-import { ChevronRight } from "@boxicons/react";
+// import { ChevronRight } from "@boxicons/react";
 
-function Pagination() {
+interface Props {
+  totalPages: number;
+  loadPage: (nextPage: number) => Promise<void>;
+  currentPage: number;
+}
+
+function Pagination({ totalPages, loadPage, currentPage }: Props) {
   return (
     <div className="flex flex-row gap-0 md:gap-2">
-      <Pbtn num={1} isActive={true} />
-      <Pbtn num={2} />
-      <Pbtn num={3} />
-      <Pbtn num={4} />
-      <Pbtn num={5} />
-      <Pbtn icon={<ChevronRight />} />
+      {Array.from({ length: totalPages }, (_, i) => i + 1).map((x) => {
+        return (
+          <span key={x} onClick={() => loadPage(x)}>
+            <Pbtn num={x} isActive={currentPage === x} />
+          </span>
+        );
+      })}
+      {/* <Pbtn icon={<ChevronRight />} /> */}
     </div>
   );
 }
 
 export default Pagination;
+
+//
+//
+//
 
 function Pbtn({
   num = 0,

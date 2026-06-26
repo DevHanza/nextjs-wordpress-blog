@@ -1,24 +1,65 @@
+"use client";
+
+import { useRef, useState } from "react";
+
 import BlogCardVertical from "@/components/blog/BlogCardVertical";
 import Pagination from "@/components/ui/Pagination";
 import EmptyState from "@/components/ui/EmptyState";
+import Skeleton from "@/components/ui/Skeleton";
 
-import { getPosts } from "@/lib/wordpress/posts";
+import { Post } from "@/types/post";
 
-async function PostsList() {
-  const { posts, totalPages } = await getPosts(2, 4);
+interface Props {
+  initialData: {
+    posts: Post[];
+    totalPages: number;
+  };
+}
 
-  if (!posts) return <EmptyState />;
+function PostsList({ initialData }: Props) {
+  //   const { posts, totalPages } = await getPosts(2, 4);
+
+  const totalPages = initialData.totalPages;
+
+  const [posts, setPosts] = useState(initialData.posts);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [loading, setLoading] = useState(false);
+
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  async function loadPage(nextPage: number) {
+    sectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    setLoading(true);
+
+    const res = await fetch(`/api/posts?page=${nextPage}&per_page=${4}`);
+    const data = await res.json();
+
+    setPosts(data.posts);
+    setCurrentPage(nextPage);
+    setLoading(false);
+  }
+
+  if (!loading && !posts) return <EmptyState />;
 
   return (
-    <div>
+    <div ref={sectionRef} className="scroll-mt-30">
       <div className="flex flex-col gap-4 md:gap-6">
-        {posts.map((post) => {
-          return <BlogCardVertical post={post} key={post.id} />;
-        })}
+        {loading
+          ? [...Array(4)].map((_, i) => (
+              <Skeleton
+                key={i}
+                className="h-25 w-full rounded-lg md:h-62 md:rounded-xl"
+              />
+            ))
+          : posts.map((post) => <BlogCardVertical key={post.id} post={post} />)}
       </div>
 
       <div className="mt-8 flex justify-center md:mt-22">
-        <Pagination />
+        <Pagination
+          totalPages={totalPages}
+          currentPage={currentPage}
+          loadPage={loadPage}
+        />
       </div>
     </div>
   );

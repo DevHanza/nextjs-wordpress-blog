@@ -8,6 +8,7 @@ import { getPosts } from "@/lib/wordpress/posts";
 export default async function Home() {
   //
   const { posts } = await getPosts(1);
+  const { posts: latestPosts, totalPages: lpTotalPages } = await getPosts(1, 4);
   // console.log(posts[0]);
 
   if (!posts) return <EmptyState />;
@@ -38,7 +39,9 @@ export default async function Home() {
           <h2 className="mb-8 text-xl font-semibold md:mb-11 md:text-2xl">
             Latest Posts
           </h2>
-          <PostsList />
+          <PostsList
+            initialData={{ posts: latestPosts, totalPages: lpTotalPages }}
+          />
         </div>
       </section>
       {/*  3 #  */}
