@@ -3,7 +3,13 @@
 import type { Dispatch, SetStateAction } from "react";
 import Link from "next/link";
 
-import { Search, X, Facebook, TwitterX, Instagram } from "@boxicons/react";
+import {
+  Search as SearchIcon,
+  X,
+  Facebook,
+  TwitterX,
+  Instagram,
+} from "@boxicons/react";
 import styles from "./Header.module.css";
 
 type OverlayProps = {
@@ -41,7 +47,7 @@ function MobileHeaderOverlay({
             <li>Contact</li>
           </Link>
         </ul>
-        <Search
+        <SearchIcon
           className="cursor-pointer"
           size="sm"
           onClick={() => {

@@ -1,4 +1,4 @@
-import { X, Search } from "@boxicons/react";
+import { X, Search as SearchIcon } from "@boxicons/react";
 import styles from "./SearchBarOverlay.module.css";
 import type { Dispatch, SetStateAction } from "react";
 
@@ -31,7 +31,7 @@ function SearchBarOverlay({ isSearching, setIsSearching }: OverlayProps) {
             type="submit"
             className="shrink-0 cursor-pointer rounded-lg bg-black p-3 text-white md:p-4"
           >
-            <Search size="base" />
+            <SearchIcon size="base" />
           </button>
         </form>
       </div>

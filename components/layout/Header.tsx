@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { Menu, Search } from "@boxicons/react";
+import { Menu, Search as SearchIcon } from "@boxicons/react";
 
 import SearchBarOverlay from "./SearchBarOverlay";
 import MobileHeaderOverlay from "./MobileHeaderOverlay";
@@ -45,7 +45,7 @@ function Header({}) {
             </Link>
           </ul>
 
-          <Search
+          <SearchIcon
             size="sm"
             className="cursor-pointer"
             onClick={() => {
