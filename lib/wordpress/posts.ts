@@ -1,9 +1,10 @@
-import { fetchAPI } from "./client";
+import { fetchAPI } from "@/lib/wordpress/client";
 import { Post } from "@/types/post";
 
 export interface PostsResponse {
   posts: Post[];
   totalPages: number;
+  totalPosts?: number;
 }
 
 export async function getPosts(
@@ -35,10 +36,12 @@ export async function searchPosts(
 
   const posts: Post[] = await res?.json();
   const totalPages = parseInt(res?.headers.get("x-wp-totalpages") || "0");
+  const totalPosts = parseInt(res?.headers.get("x-wp-total") || "0");
 
   return {
     posts,
     totalPages,
+    totalPosts,
   };
 }
 
