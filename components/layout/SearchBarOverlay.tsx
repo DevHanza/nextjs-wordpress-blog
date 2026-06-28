@@ -1,6 +1,7 @@
-import { X, Search as SearchIcon } from "@boxicons/react";
-import styles from "./SearchBarOverlay.module.css";
 import type { Dispatch, SetStateAction } from "react";
+import styles from "./SearchBarOverlay.module.css";
+import { X } from "@boxicons/react";
+import SearchInput from "@/components/layout/SearchInput";
 
 type OverlayProps = {
   isSearching: boolean;
@@ -21,19 +22,9 @@ function SearchBarOverlay({ isSearching, setIsSearching }: OverlayProps) {
             }}
           />
         </div>
-        <form className="mx-auto mt-15 flex max-w-180 flex-row gap-2 md:mt-22">
-          <input
-            type="text"
-            placeholder="Search posts.."
-            className="flex-1 rounded-lg border border-gray-300 px-4 md:px-5"
-          />
-          <button
-            type="submit"
-            className="shrink-0 cursor-pointer rounded-lg bg-black p-3 text-white md:p-4"
-          >
-            <SearchIcon size="base" />
-          </button>
-        </form>
+        <div className="mx-auto mt-15 max-w-180 md:mt-22">
+          <SearchInput />
+        </div>
       </div>
     </div>
   );
