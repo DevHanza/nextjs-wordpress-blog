@@ -10,6 +10,8 @@ interface Props {
 }
 
 function Pagination({ totalPages, loadPage, currentPage }: Props) {
+  if (totalPages <= 1) return;
+
   return (
     <div className="flex flex-row gap-0 md:gap-2">
       {Array.from({ length: totalPages }, (_, i) => i + 1).map((x) => {
