@@ -1,5 +1,6 @@
 import { searchPosts } from "@/lib/wordpress/posts";
 import SearchResults from "@/components/SearchResults";
+import SearchInput from "@/components/layout/SearchInput";
 
 interface Props {
   searchParams: Promise<{
@@ -22,6 +23,9 @@ export default async function SearchPage({ searchParams }: Props) {
   return (
     <div className="g-container">
       <div className="py-6 md:py-12">
+        <div className="mb-8 md:mb-12">
+          <SearchInput query={query} />
+        </div>
         <h1 className="text-xl font-normal md:text-2xl">
           {totalPosts} Search Results for{" "}
           <span className="font-bold">“{query}”</span>
