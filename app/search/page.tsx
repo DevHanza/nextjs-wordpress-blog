@@ -1,4 +1,5 @@
 import { searchPosts } from "@/lib/wordpress/posts";
+import SearchResults from "@/components/SearchResults";
 
 interface Props {
   searchParams: Promise<{
@@ -12,6 +13,12 @@ export default async function SearchPage({ searchParams }: Props) {
 
   const { posts, totalPages, totalPosts } = await searchPosts(query, 1, 4);
 
+  const initialData = {
+    posts,
+    totalPages,
+    totalPosts,
+  };
+
   return (
     <div className="g-container">
       <div className="py-6 md:py-12">
@@ -20,6 +27,7 @@ export default async function SearchPage({ searchParams }: Props) {
           <span className="font-bold">“{query}”</span>
         </h1>
       </div>
+      <SearchResults query={query} initialData={initialData} />
     </div>
   );
 }
