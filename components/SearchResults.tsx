@@ -37,8 +37,6 @@ function SearchResults({ initialData, query }: Props) {
     );
     const data = await res.json();
 
-    console.log(data);
-
     setPosts(data.posts);
     setCurrentPage(nextPage);
     setLoading(false);

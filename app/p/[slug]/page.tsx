@@ -16,16 +16,13 @@ async function SinglePostPage({ params }: Props) {
 
   let post: Post = await getPostBySlug(slug);
 
-  // console.log(post);
   if (!post) return notFound();
-  
+
   post = post[0];
 
   //
   const thumb = post?._embedded["wp:featuredmedia"][0].source_url;
   const thumb_alt = post?._embedded["wp:featuredmedia"]?.[0]?.alt_text;
-
-  console.log(thumb);
 
   const author = {
     name: post?._embedded?.author[0].name,

@@ -9,7 +9,6 @@ export default async function Home() {
   //
   const { posts } = await getPosts(1);
   const { posts: latestPosts, totalPages: lpTotalPages } = await getPosts(1, 4);
-  // console.log(posts[0]);
 
   if (!posts) return <EmptyState />;
 
