@@ -3,7 +3,6 @@ import Author from "@/components/blog/Author";
 
 import { getPostBySlug } from "@/lib/wordpress/posts";
 import { notFound } from "next/navigation";
-import { Post } from "@/types/post";
 
 import styles from "./single-post.module.css";
 
@@ -14,19 +13,22 @@ interface Props {
 async function SinglePostPage({ params }: Props) {
   const { slug } = await params;
 
-  let post: Post = await getPostBySlug(slug);
+  const postData = await getPostBySlug(slug);
 
-  if (!post) return notFound();
+  if (!postData || !postData[0] || postData.length === 0) {
+    return notFound();
+  }
 
-  post = post[0];
+  const post = postData[0];
 
   //
-  const thumb = post?._embedded["wp:featuredmedia"][0].source_url;
-  const thumb_alt = post?._embedded["wp:featuredmedia"]?.[0]?.alt_text;
+  // In your page.tsx
+  const thumb = post?._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
+  const thumb_alt = post?._embedded?.["wp:featuredmedia"]?.[0]?.alt_text;
 
   const author = {
-    name: post?._embedded?.author[0].name,
-    photo: post?._embedded.author[0].avatar_urls["48"],
+    name: post?._embedded?.author?.[0]?.name || "Unknown Author",
+    photo: post?._embedded?.author?.[0]?.avatar_urls?.[48] || "/profile.jpg",
   };
 
   const date = new Date(post.date).toLocaleDateString("en-US", {
@@ -85,7 +87,7 @@ async function SinglePostPage({ params }: Props) {
         <div
           className="g-container max-w-3xl"
           dangerouslySetInnerHTML={{
-            __html: post.content?.rendered,
+            __html: post.content?.rendered ?? "",
           }}
         ></div>
       </section>

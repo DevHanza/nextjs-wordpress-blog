@@ -45,7 +45,7 @@ export async function searchPosts(
   };
 }
 
-export async function getPostBySlug(slug: string): Promise<Post> {
+export async function getPostBySlug(slug: string): Promise<Post[]> {
   const res = await fetchAPI(`wp/v2/posts?slug=${slug}&_embed`);
   return res?.json();
 }
