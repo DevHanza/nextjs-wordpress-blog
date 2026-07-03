@@ -9,7 +9,9 @@ interface Props {
 }
 
 export default function HeroBlogCard({ post }: Props) {
-  const thumb = post?._embedded["wp:featuredmedia"][0].source_url;
+  const thumb =
+    post?._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url;
+  // post?._embedded["wp:featuredmedia"][0].source_url
   const thumb_alt = post?._embedded["wp:featuredmedia"][0].alt_text;
 
   const author = {
