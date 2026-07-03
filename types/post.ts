@@ -17,6 +17,19 @@ export interface Post {
 
   read_time: number;
 
-  _embedded?: any;
-  // _embedded?: {};
+  // _embedded?: unknown;
+  _embedded?: {
+    author?: Author[];
+    "wp:featuredmedia": wpFeaturedMedia[];
+  };
+}
+
+interface Author {
+  name?: string;
+  avatar_urls?: object;
+}
+
+interface wpFeaturedMedia {
+  source_url?: string;
+  alt_text?: string;
 }
