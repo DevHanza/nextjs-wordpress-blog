@@ -10,7 +10,7 @@ export default async function Home() {
   const { posts } = await getPosts(1);
   const { posts: latestPosts, totalPages: lpTotalPages } = await getPosts(1, 4);
 
-  if (!!posts)
+  if (!posts)
     return (
       <div className="g-container min-h-[60dvh] content-center py-12">
         <ErrorState />
