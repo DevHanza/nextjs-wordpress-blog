@@ -4,6 +4,7 @@ import Author from "@/components/blog/Author";
 import { getPostBySlug } from "@/lib/wordpress/posts";
 import { notFound } from "next/navigation";
 
+import { Post } from "@/types/post";
 import styles from "./single-post.module.css";
 
 interface Props {
@@ -19,7 +20,7 @@ async function SinglePostPage({ params }: Props) {
     return notFound();
   }
 
-  const post = postData[0];
+  const post: Post = postData[0];
 
   //
   // In your page.tsx
