@@ -17,19 +17,23 @@ export interface Post {
 
   read_time: number;
 
-  // _embedded?: unknown;
-  _embedded?: {
-    author?: Author[];
+  _embedded: {
+    author: Author[];
     "wp:featuredmedia": wpFeaturedMedia[];
   };
 }
 
 interface Author {
-  name?: string;
-  avatar_urls?: object;
+  name: string;
+  avatar_urls: {
+    [key: string]: string;
+    "24": string;
+    "48": string;
+    "96": string;
+  };
 }
 
 interface wpFeaturedMedia {
-  source_url?: string;
-  alt_text?: string;
+  source_url: string;
+  alt_text: string;
 }
