@@ -66,9 +66,9 @@ async function SinglePostPage({ params }: Props) {
           ></div>
 
           <span className="mt-6 flex gap-3 text-sm text-gray-500 md:hidden">
-            <span>Oct 19, 2020</span>
+            <span>{date}</span>
             <span>•</span>
-            <span>2 min read</span>
+            <span>{post.read_time} min read</span>
           </span>
 
           <Image
