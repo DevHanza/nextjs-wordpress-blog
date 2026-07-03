@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 
 import BlogCardVertical from "@/components/blog/BlogCardVertical";
 import Pagination from "@/components/ui/Pagination";
-import EmptyState from "@/components/ui/EmptyState";
+import ErrorState from "./ui/ErrorState";
 import Skeleton from "@/components/ui/Skeleton";
 
 import { Post } from "@/types/post";
@@ -42,7 +42,7 @@ function PostsList({ initialData }: Props) {
   if (!loading && !posts)
     return (
       <div className="g-container min-h-[60dvh] content-center py-12">
-        <EmptyState />
+        <ErrorState />
       </div>
     );
 

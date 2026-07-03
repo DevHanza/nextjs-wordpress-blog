@@ -1,4 +1,4 @@
-import EmptyState from "@/components/ui/EmptyState";
+import ErrorState from "@/components/ui/ErrorState";
 import HeroBlogCard from "@/components/HeroBlogCard";
 import BlogCardMini from "@/components/blog/BlogCardMini";
 import PostsList from "@/components/PostsList";
@@ -12,8 +12,8 @@ export default async function Home() {
 
   if (!!posts)
     return (
-      <div className="g-container py-12 min-h-[60dvh] content-center ">
-        <EmptyState />
+      <div className="g-container min-h-[60dvh] content-center py-12">
+        <ErrorState />
       </div>
     );
 
