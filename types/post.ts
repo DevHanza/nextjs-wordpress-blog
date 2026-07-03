@@ -36,4 +36,11 @@ interface Author {
 interface wpFeaturedMedia {
   source_url: string;
   alt_text: string;
+  media_details: {
+    sizes: {
+      full: {
+        source_url: string;
+      };
+    };
+  };
 }
