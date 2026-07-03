@@ -42,7 +42,10 @@ function SearchResults({ initialData, query }: Props) {
     setLoading(false);
   }
 
-  if (!loading && !posts) return <EmptyState />;
+  if (!loading && !posts)
+    <div className="g-container min-h-[60dvh] content-center py-12">
+      <EmptyState />
+    </div>;
 
   return (
     <div ref={sectionRef} className="scroll-mt-30">
