@@ -7,7 +7,7 @@ function ErrorState() {
       heading="Error"
       text="Something went wrong!"
       Icon={AlertTriangle}
-      statusColor="text-gray-700"
+      statusColor="text-red-600"
     />
   );
 }
