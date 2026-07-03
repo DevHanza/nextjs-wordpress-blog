@@ -13,7 +13,7 @@ export default function NotFound() {
       />
 
       <Link href="/">
-        <button className="mt-8 min-h-10 cursor-pointer rounded-md bg-black px-4 text-base text-white">
+        <button className="mt-10 min-h-10 cursor-pointer rounded-md bg-black px-4 text-base text-white">
           Return Home
         </button>
       </Link>
