@@ -239,7 +239,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- ACKNOWLEDGMENTS -->
 
-## Acknowledgments
+## Resources
 
 - [Box Icons](https://boxicons.com/icons?free=true)
 - [Vercel](https://vercel.com/)
