@@ -67,15 +67,22 @@ function Footer() {
         </Link>
 
         <ul className="mb-11 flex flex-row justify-center gap-8 text-sm text-gray-500 uppercase">
-          <Link href={"/"} className="content-center">
-            <li className="text-black">Home</li>
-          </Link>
-          <Link href={"/about"} className="content-center">
-            <li>About</li>
-          </Link>
-          <Link href={"/contact"} className="content-center">
-            <li>Contact</li>
-          </Link>
+          <li className="text-black">
+            <Link href={"/"} className="content-center">
+              Home
+            </Link>
+          </li>
+
+          <li>
+            <Link href={"/about"} className="content-center">
+              About
+            </Link>
+          </li>
+          <li>
+            <Link href={"/contact"} className="content-center">
+              Contact
+            </Link>
+          </li>
         </ul>
 
         <div className="flex justify-center gap-3 text-gray-500">

@@ -30,19 +30,21 @@ function Header({}) {
 
         <nav className="hidden flex-row items-center gap-9 md:flex">
           <ul className="flex flex-row gap-8 text-sm text-gray-500 uppercase">
-            <Link href={"/"} className="content-center">
-              <li className={pathname === "/" ? "text-black" : ""}>Home</li>
-            </Link>
-            <Link href={"/about"} className="content-center">
-              <li className={pathname === "/about" ? "text-black" : ""}>
+            <li className={pathname === "/" ? "text-black" : ""}>
+              <Link href={"/"} className="content-center">
+                Home
+              </Link>
+            </li>
+            <li className={pathname === "/about" ? "text-black" : ""}>
+              <Link href={"/about"} className="content-center">
                 About
-              </li>
-            </Link>
-            <Link href={"/contact"} className="content-center">
-              <li className={pathname === "/contact" ? "text-black" : ""}>
+              </Link>
+            </li>
+            <li className={pathname === "/contact" ? "text-black" : ""}>
+              <Link href={"/contact"} className="content-center">
                 Contact
-              </li>
-            </Link>
+              </Link>
+            </li>
           </ul>
 
           <SearchIcon

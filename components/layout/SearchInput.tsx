@@ -11,6 +11,7 @@ function SearchInput({ query }: { query?: string }) {
         defaultValue={query}
       />
       <button
+        aria-label={"Search"}
         type="submit"
         className="shrink-0 cursor-pointer rounded-lg bg-black p-3 text-white md:p-4"
       >
