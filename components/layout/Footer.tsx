@@ -86,17 +86,20 @@ function Footer() {
         </ul>
 
         <div className="flex justify-center gap-3 text-gray-500">
-          <a href={"https://facebook.com"}>
+          <a href={"https://facebook.com"} aria-label="Visit our Facebook page">
             <span className="gray-500 flex h-9 w-9 items-center justify-center rounded-full border border-gray-400">
               <Facebook size="sm" />
             </span>
           </a>
-          <a href={"https://x.com"}>
+          <a href={"https://x.com"} aria-label="Visit our X (Twitter) page">
             <span className="gray-500 flex h-9 w-9 items-center justify-center rounded-full border border-gray-400">
               <TwitterX size="sm" />
             </span>
           </a>
-          <a href={"https://instagram.com"}>
+          <a
+            href={"https://instagram.com"}
+            aria-label="Visit our Instagram page"
+          >
             <span className="gray-500 flex h-9 w-9 items-center justify-center rounded-full border border-gray-400">
               <Instagram size="sm" />
             </span>
