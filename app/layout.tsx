@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Next.js WP Blog",
-  description: "",
+  description: "A Blog built with Next.js using Headless WordPress.",
 };
 
 export default function RootLayout({
