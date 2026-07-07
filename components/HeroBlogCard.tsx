@@ -61,6 +61,7 @@ export default function HeroBlogCard({ post }: Props) {
             height={400}
             alt={thumb_alt}
             loading="eager"
+            fetchPriority="high"
           />
         </Link>
       </div>
